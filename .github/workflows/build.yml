@@ -56,7 +56,11 @@ jobs:
     - name: Soundness check
       run: |-
         cd main
-        datasette . --get / | grep "Ryan Cheley: TIL"     
+        datasette . --get / | grep "Simon Willison: TIL"
+    - name: Generate missing screenshots
+      run: |-
+        cd main
+        python generate_screenshots.py
     - name: Update README
       run: |-
         cd main
