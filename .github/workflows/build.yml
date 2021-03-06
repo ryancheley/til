@@ -53,10 +53,6 @@ jobs:
       run: |-
         cd main
         python build_database.py
-    - name: Soundness check
-      run: |-
-        cd main
-        datasette . --get / | grep "Ryan Cheley: TIL"
     - name: Generate missing screenshots
       run: |-
         cd main
