@@ -47,7 +47,7 @@ jobs:
     - name: Download previous database unless REBUILD in commit message
       if: |-
         !contains(github.event.head_commit.message, 'REBUILD')
-      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/simonw/til-db/main/tils.db
+      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/ryancheley/til-db/main/tils.db
       continue-on-error: true
     - name: Build database
       run: |-
