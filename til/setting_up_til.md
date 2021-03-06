@@ -7,7 +7,7 @@ To get something like this going you need to set up two repositories:
 * til-db
 * til
 
-The `til-db` doesn't need to have anything it it (not even a README.md ... although mine does)
+The `til-db` doesn't need to have anything it it (not even a `README.md` ... although mine does)
 
 The `til` needs the following files:
 
