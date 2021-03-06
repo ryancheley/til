@@ -18,7 +18,7 @@ jobs:
     - name: Checkout til-db
       uses: actions/checkout@v2
       with:
-        repository: simonw/til-db
+        repository: ryancheley/til-db
         path: til-db
         token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_PUSH }}
     - name: Set up Python
