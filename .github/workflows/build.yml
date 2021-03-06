@@ -53,6 +53,10 @@ jobs:
       run: |-
         cd main
         python build_database.py
+    - name: Soundness check
+      run: |-
+        cd main
+        datasette . --get / | grep "Ryan Cheley: TIL"     
     - name: Update README
       run: |-
         cd main
