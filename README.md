@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->2<!-- count ends --> TILs so far.
+<!-- count starts -->3<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -12,4 +12,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## pypi
 
 * [Adding a Package to PyPi](https://github.com/ryancheley/til/blob/main/pypi/adding_a_package_to_pypi.md) - 2021-03-07
+
+## github
+
+* [Stage Partial Changes in Git](https://github.com/ryancheley/til/blob/main/github/stage_partial_changes_in_git.md) - 2021-06-05
 <!-- index ends -->
