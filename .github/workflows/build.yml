@@ -64,10 +64,3 @@ jobs:
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
-    - name: Save tils.db to ryancheley/til-db
-      run: |-
-        cd til-db
-        cp ../main/tils.db .
-        git add tils.db
-        git commit --amend --no-edit
-        git push --force
