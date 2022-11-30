@@ -19,5 +19,5 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 
 ## regex
 
-* [Named Regex Groups](https://github.com/ryancheley/til/blob/main/regex/named_regex_groups.md) - 2022-11-30
+* [---](https://github.com/ryancheley/til/blob/main/regex/named_regex_groups.md) - 2022-11-30
 <!-- index ends -->
