@@ -1,3 +1,8 @@
+---
+tags: til
+date: 11-30-2022
+---
+
 # Named Regular Expression Groups
 
 I was watching a [video](https://youtube.com/watch?v=gPMpRw1xUA8&feature=share) about "regex back references" by Anthony Sotille and while he was talking about the use of back references, I learned that I can name regex groups ... and my mind was like 🤯

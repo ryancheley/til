@@ -8,6 +8,8 @@ import sqlite_utils
 from sqlite_utils.db import NotFoundError
 import time
 
+import frontmatter
+
 root = pathlib.Path(__file__).parent.resolve()
 
 
@@ -38,9 +40,9 @@ def build_database(repo_path):
     db = sqlite_utils.Database(repo_path / "tils.db")
     table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
-        fp = filepath.open()
-        title = fp.readline().lstrip("#").strip()
-        body = fp.read().strip()
+        fp = frontmatter.load(filepath)
+        title = fp.content.split('\n')[0].lstrip("#").strip()
+        body = fp.content
         path = str(filepath.relative_to(root))
         slug = filepath.stem
         url = "https://github.com/ryancheley/til/blob/main/{}".format(path)
