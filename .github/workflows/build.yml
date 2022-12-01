@@ -1,9 +1,11 @@
-name: Build README
+name: Build README and deploy Datasette
 
 on:
   push:
     branches:
     - main
+    paths-ignore:
+    - README.md
 
 jobs:
   build:
@@ -13,67 +15,32 @@ jobs:
       uses: actions/checkout@v2
       # We need full history to introspect created/updated:
       with:
-        fetch-depth: 0
-        path: main
-    - name: Checkout til-db
-      uses: actions/checkout@v2
-      with:
-        repository: ryancheley/til-db
-        path: til-db
-        token: ${{ secrets.PERSONAL_ACCESS_TOKEN_FOR_PUSH }}
+        fetch-depth: 0  
     - name: Set up Python
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
-    - uses: actions/cache@v2
+    - uses: actions/cache@v1
       name: Configure pip caching
       with:
         path: ~/.cache/pip
         key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
         restore-keys: |
           ${{ runner.os }}-pip-
-    - uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-
-        restore-keys: |
-          ${{ runner.os }}-node-
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r main/requirements.txt
-    - name: Install npm dependencies
-      run: sudo npm install -g puppeteer-cli --unsafe-perm=true
-    - name: Download previous database unless REBUILD in commit message
-      if: |-
-        !contains(github.event.head_commit.message, 'REBUILD')
-      run: curl --fail -o main/tils.db https://raw.githubusercontent.com/ryancheley/til-db/main/tils.db
-      continue-on-error: true
+        pip install -r requirements.txt
     - name: Build database
-      run: |-
-        cd main
-        python build_database.py
-    - name: Generate missing screenshots
-      run: |-
-        cd main
-        python generate_screenshots.py
+      run: python build_database.py
     - name: Update README
       run: |-
-        cd main
         python update_readme.py --rewrite
         cat README.md
     - name: Commit and push if README changed
       run: |-
-        cd main
         git diff
-        git config --global user.email "actions@users.noreply.github.com"
+        git config --global user.email "readme-bot@example.com"
         git config --global user.name "README-bot"
         git diff --quiet || (git add README.md && git commit -m "Updated README")
         git push
-    - name: Save tils.db to ryancheley/til-db
-      run: |-
-        cd til-db
-        cp ../main/tils.db .
-        git add tils.db
-        git commit --amend --no-edit --author="README-bot <actions@users.noreply.github.com>"
-        git push --force
