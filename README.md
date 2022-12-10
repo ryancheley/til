@@ -27,5 +27,5 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 
 ## Django
 
-* [In a recent episode of [Python Bytes](https://pythonbytes.fm/episodes/show/313/programming-robots-with-a-marker) cohost [Michael Kennedy](https://mastodon.social/@mkennedy@fosstodon.org) highlighted a new package called `setproctitle`.](https://github.com/ryancheley/til/blob/main/Django/setproctitle.md) - 2022-12-10
+* [Adding setproctitle to Django](https://github.com/ryancheley/til/blob/main/Django/setproctitle.md) - 2022-12-10
 <!-- index ends -->
