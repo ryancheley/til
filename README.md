@@ -23,7 +23,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 
 ## pelican
 
-* [Adding a robots.txt and favicon.ico files to my Pelican Site](https://github.com/ryancheley/til/blob/main/pelican/robots-and-favicon.md) - 2022-12-03
+* [Adding a robots.txt and favicon.ico files to my Pelican Site](https://github.com/ryancheley/til/blob/main/pelican/robots_and_favicon.md) - 2022-12-03
 
 ## Django
 
