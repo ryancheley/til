@@ -1,3 +1,5 @@
+# Delete Branch on Merge
+
 While reading Adam Johnson's book [Boost Your Git DX](https://adamchainz.gumroad.com/l/byddx) I discovered that there is a seting which is not on by default in GitHub called "Automatically delete head branches" in the settings of any repository. 
 
 This setting, when enabled, will delete a branch after it's been merged so you don't have to clean up after yourself. Brilliant!
