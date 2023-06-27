@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->6<!-- count ends --> TILs so far.
+<!-- count starts -->7<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -16,16 +16,17 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## github
 
 * [Stage Partial Changes in Git](https://github.com/ryancheley/til/blob/main/github/stage_partial_changes_in_git.md) - 2021-06-05
+* [While reading Adam Johnson's book [Boost Your Git DX](https://adamchainz.gumroad.com/l/byddx) I discovered that there is a seting which is not on by default in GitHub called "Automatically delete head branches" in the settings of any repository.](https://github.com/ryancheley/til/blob/main/github/delete_branch_on_merge.md) - 2023-06-27
 
 ## regex
 
 * [Named Regular Expression Groups](https://github.com/ryancheley/til/blob/main/regex/named_regex_groups.md) - 2022-11-30
 
-## pelican
-
-* [Adding a robots.txt and favicon.ico files to my Pelican Site](https://github.com/ryancheley/til/blob/main/pelican/robots_and_favicon.md) - 2022-12-03
-
 ## Django
 
 * [Adding setproctitle to Django](https://github.com/ryancheley/til/blob/main/Django/setproctitle.md) - 2022-12-10
+
+## pelican
+
+* [Adding a robots.txt and favicon.ico files to my Pelican Site](https://github.com/ryancheley/til/blob/main/pelican/robots_and_favicon.md) - 2022-12-10
 <!-- index ends -->
