@@ -1,0 +1,3 @@
+# SQLite may be OK to use in Production
+
+At work we have a Django app and the default database points to a SQLite database, while other databases point to various different MS SQL databases. We were looking at migrating from SQLite for default, which only stores Django specific tables (auth, users, etc) to MS SQL. But after a bit of research it seems like this might not be necessary as SQLite can handle 10's of thousands of reads and so long as you don't have lots of writes to the table it should be fine. Based on current usage 'lots of writes' isn't an issue for us, so it looks like we may not need to migrate after all.
