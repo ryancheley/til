@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->9<!-- count ends --> TILs so far.
+<!-- count starts -->10<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -37,4 +37,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## sqlite
 
 * [SQLite may be OK to use in Production](https://github.com/ryancheley/til/blob/main/sqlite/sqlite-may-be-ok-to-use-in-production.md) - 2023-12-22
+
+## css
+
+* [CSS Specificity](https://github.com/ryancheley/til/blob/main/css/css-specificity.md) - 2023-12-23
 <!-- index ends -->
