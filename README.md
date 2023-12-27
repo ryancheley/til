@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->10<!-- count ends --> TILs so far.
+<!-- count starts -->11<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -41,4 +41,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## css
 
 * [CSS Specificity](https://github.com/ryancheley/til/blob/main/css/css-specificity.md) - 2023-12-23
+
+## nginx
+
+* [nginx and slashes](https://github.com/ryancheley/til/blob/main/nginx/the-importance-of-slashes.md) - 2023-12-26
 <!-- index ends -->
