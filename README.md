@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->14<!-- count ends --> TILs so far.
+<!-- count starts -->16<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -18,6 +18,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Stage Partial Changes in Git](https://github.com/ryancheley/til/blob/main/github/stage_partial_changes_in_git.md) - 2021-06-05
 * [Delete Branch on Merge](https://github.com/ryancheley/til/blob/main/github/delete_branch_on_merge.md) - 2023-06-27
 * [kbd tag in Markdown on GitHub](https://github.com/ryancheley/til/blob/main/github/kbd.md) - 2023-12-28
+* [commit messages](https://github.com/ryancheley/til/blob/main/github/commit-messages.md) - 2024-01-08
 
 ## regex
 
@@ -26,6 +27,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## Django
 
 * [Adding setproctitle to Django](https://github.com/ryancheley/til/blob/main/Django/setproctitle.md) - 2022-12-10
+* [Using or to set a value](https://github.com/ryancheley/til/blob/main/Django/using-or-to-set-a-value.md) - 2024-01-07
 
 ## pelican
 
