@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->16<!-- count ends --> TILs so far.
+<!-- count starts -->17<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -53,4 +53,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## ssis
 
 * [SSIS and git](https://github.com/ryancheley/til/blob/main/ssis/ssis-and-git.md) - 2024-01-03
+
+## DjangoPackages
+
+* [uWSGI is used on DjangoPackages](https://github.com/ryancheley/til/blob/main/DjangoPackages/uwsgi-is-used-on-djangopackages.md) - 2024-01-11
 <!-- index ends -->
