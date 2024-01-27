@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->21<!-- count ends --> TILs so far.
+<!-- count starts -->22<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -70,4 +70,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## computing
 
 * [Tilde](https://github.com/ryancheley/til/blob/main/computing/tilde.md) - 2024-01-25
+
+## git
+
+* [Exclude in git](https://github.com/ryancheley/til/blob/main/git/exclude.md) - 2024-01-26
 <!-- index ends -->
