@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->23<!-- count ends --> TILs so far.
+<!-- count starts -->24<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -62,6 +62,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## vscode
 
 * [Snippets](https://github.com/ryancheley/til/blob/main/vscode/snippets.md) - 2024-01-14
+* [File Associations](https://github.com/ryancheley/til/blob/main/vscode/file-associations.md) - 2024-02-10
 
 ## tailscale
 
