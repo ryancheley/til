@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->28<!-- count ends --> TILs so far.
+<!-- count starts -->29<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -19,6 +19,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Delete Branch on Merge](https://github.com/ryancheley/til/blob/main/github/delete_branch_on_merge.md) - 2023-06-27
 * [kbd tag in Markdown on GitHub](https://github.com/ryancheley/til/blob/main/github/kbd.md) - 2023-12-28
 * [commit messages](https://github.com/ryancheley/til/blob/main/github/commit-messages.md) - 2024-01-08
+* [Default Environment Variables](https://github.com/ryancheley/til/blob/main/github/default-environment-variables.md) - 2024-03-01
 
 ## regex
 
