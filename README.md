@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->31<!-- count ends --> TILs so far.
+<!-- count starts -->32<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -31,6 +31,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Using or to set a value](https://github.com/ryancheley/til/blob/main/Django/using-or-to-set-a-value.md) - 2024-01-07
 * [Django's raw_id_field](https://github.com/ryancheley/til/blob/main/Django/raw-id-fields.md) - 2024-02-24
 * [Migrate Zero](https://github.com/ryancheley/til/blob/main/Django/migrate-command-zero.md) - 2024-03-04
+* [Proxy Models](https://github.com/ryancheley/til/blob/main/Django/proxy-models.md) - 2024-03-06
 
 ## pelican
 
