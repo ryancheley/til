@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->37<!-- count ends --> TILs so far.
+<!-- count starts -->38<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -98,4 +98,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## html
 
 * [Text Fragments](https://github.com/ryancheley/til/blob/main/html/text-fragments.md) - 2024-11-02
+
+## uv
+
+* [uv venv and missing pip](https://github.com/ryancheley/til/blob/main/uv/uv-venv.md) - 2024-11-03
 <!-- index ends -->
