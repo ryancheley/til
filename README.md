@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->38<!-- count ends --> TILs so far.
+<!-- count starts -->39<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -102,4 +102,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## uv
 
 * [uv venv and missing pip](https://github.com/ryancheley/til/blob/main/uv/uv-venv.md) - 2024-11-03
+
+## iOS
+
+* [Fantastical Create Event](https://github.com/ryancheley/til/blob/main/iOS/Fantastical-create-event.md) - 2025-01-01
 <!-- index ends -->
