@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->39<!-- count ends --> TILs so far.
+<!-- count starts -->40<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -106,4 +106,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## iOS
 
 * [Fantastical Create Event](https://github.com/ryancheley/til/blob/main/iOS/Fantastical-create-event.md) - 2025-01-01
+
+## Synology
+
+* [Synology OS iso Location for VMs](https://github.com/ryancheley/til/blob/main/Synology/Synology-OS-ISO-Location-for-VMs.md) - 2025-01-02
 <!-- index ends -->
