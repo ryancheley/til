@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: daily
+    groups:
+        python-packages:
+          patterns:
+            - "*"
+    target-branch: "main"
+    commit-message:
+      prefix: "pip prod"
+      include: "scope"
+    labels:
+      - "🛠️ maintenance"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
+    commit-message:
+      prefix: "github-actions"
+      include: "scope"
+    labels:
+      - "🛠️ maintenance"
