@@ -1,5 +1,3 @@
-column command
-
 TLDR: column is a linux cli that lets you output stuff in columns
 
 ## Discovery
