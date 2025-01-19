@@ -80,7 +80,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## computing
 
 * [Tilde](https://github.com/ryancheley/til/blob/main/computing/tilde.md) - 2024-01-25
-* [column command](https://github.com/ryancheley/til/blob/main/computing/column-command.md) - 2025-01-05
+* [TLDR: column is a linux cli that lets you output stuff in columns](https://github.com/ryancheley/til/blob/main/computing/column-command.md) - 2025-01-05
 
 ## git
 
