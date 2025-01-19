@@ -18,6 +18,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
     target-branch: "main"
     commit-message:
       prefix: "github-actions"
