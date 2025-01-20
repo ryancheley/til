@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->42<!-- count ends --> TILs so far.
+<!-- count starts -->43<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -35,6 +35,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Include and the with argument](https://github.com/ryancheley/til/blob/main/Django/include-template-with.md) - 2024-05-04
 * [Django migrations fake flag](https://github.com/ryancheley/til/blob/main/Django/fake-flag-for-migrations.md) - 2024-10-06
 * [sqlitemigrate Django command](https://github.com/ryancheley/til/blob/main/Django/sqlmigrate.md) - 2025-01-19
+* [Documentation Update PRs](https://github.com/ryancheley/til/blob/main/Django/doc-prs.md) - 2025-01-20
 
 ## pelican
 
