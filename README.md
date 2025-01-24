@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->45<!-- count ends --> TILs so far.
+<!-- count starts -->46<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -118,4 +118,5 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## just
 
 * [Global justfile](https://github.com/ryancheley/til/blob/main/just/global-justfile.md) - 2025-01-22
+* [Remote justfile](https://github.com/ryancheley/til/blob/main/just/remote-justfiles.md) - 2025-01-23
 <!-- index ends -->
