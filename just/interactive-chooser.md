@@ -26,7 +26,8 @@ brew install fzf
 
 In my personal blog I have a just file. Running `just --choose` and typing `cel` will give me this
 
-![just --choose](images/just-chooser.png)
+![just --choose](https://github.com/ryancheley/til/blob/main/images/just-chooser.png)
+
 
 ## Why It Matters
 
