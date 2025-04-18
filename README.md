@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->48<!-- count ends --> TILs so far.
+<!-- count starts -->49<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -21,6 +21,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [commit messages](https://github.com/ryancheley/til/blob/main/github/commit-messages.md) - 2024-01-08
 * [Default Environment Variables](https://github.com/ryancheley/til/blob/main/github/default-environment-variables.md) - 2024-03-01
 * [Dependabot to update GitHub Actions](https://github.com/ryancheley/til/blob/main/github/gha-dependabot.md) - 2025-01-25
+* [GitHub Flavored Markdown via the gh cli](https://github.com/ryancheley/til/blob/main/github/gfm.md) - 2025-04-18
 
 ## regex
 
