@@ -1,0 +1,475 @@
+name: Build TIL Timeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Rebuild daily at 6 AM UTC
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-timeline:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Generate timeline data
+      run: |
+        node << 'EOF'
+        const fs = require('fs');
+        const path = require('path');
+        
+        // Function to extract metadata from markdown files
+        function extractTilData(filePath, content) {
+          const relativePath = path.relative('.', filePath);
+          const fileName = path.basename(filePath, '.md');
+          
+          // Extract title from first heading or use filename
+          const titleMatch = content.match(/^#\s+(.+)$/m);
+          const title = titleMatch ? titleMatch[1] : fileName.replace(/[-_]/g, ' ');
+          
+          // Extract first paragraph as description
+          const lines = content.split('\n').filter(line => line.trim());
+          let description = '';
+          for (const line of lines) {
+            if (!line.startsWith('#') && line.trim() && !line.startsWith('```')) {
+              description = line.trim();
+              break;
+            }
+          }
+          
+          // Get file stats for date
+          const stats = fs.statSync(filePath);
+          const date = stats.mtime; // Use modification time
+          
+          // Extract category from directory structure
+          const pathParts = relativePath.split('/');
+          const category = pathParts.length > 1 ? pathParts[0] : 'General';
+          
+          return {
+            title,
+            description: description || 'No description available',
+            date: date.toISOString().split('T')[0], // YYYY-MM-DD format
+            url: `https://github.com/ryancheley/til/blob/main/${relativePath}`,
+            category,
+            fileName: relativePath
+          };
+        }
+        
+        // Recursively find all markdown files
+        function findMarkdownFiles(dir) {
+          const files = [];
+          const entries = fs.readdirSync(dir, { withFileTypes: true });
+          
+          for (const entry of entries) {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory() && !entry.name.startsWith('.')) {
+              files.push(...findMarkdownFiles(fullPath));
+            } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'README.md') {
+              files.push(fullPath);
+            }
+          }
+          
+          return files;
+        }
+        
+        // Generate timeline data
+        const markdownFiles = findMarkdownFiles('.');
+        const tilEntries = [];
+        
+        for (const filePath of markdownFiles) {
+          try {
+            const content = fs.readFileSync(filePath, 'utf8');
+            const tilData = extractTilData(filePath, content);
+            tilEntries.push(tilData);
+          } catch (error) {
+            console.error(`Error processing ${filePath}:`, error.message);
+          }
+        }
+        
+        // Sort by date (newest first)
+        tilEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
+        
+        // Create output directory
+        if (!fs.existsSync('docs')) {
+          fs.mkdirSync('docs');
+        }
+        
+        // Write timeline data
+        fs.writeFileSync('docs/timeline-data.json', JSON.stringify(tilEntries, null, 2));
+        
+        console.log(`Generated timeline with ${tilEntries.length} entries`);
+        EOF
+        
+    - name: Generate timeline HTML
+      run: |
+        mkdir -p docs
+        cat > docs/index.html << 'EOF'
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Ryan's Today I Learned Timeline</title>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+                
+                body {
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    min-height: 100vh;
+                    color: #333;
+                }
+                
+                .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                }
+                
+                .header {
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    color: white;
+                }
+                
+                .header h1 {
+                    font-size: 3rem;
+                    margin-bottom: 1rem;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                }
+                
+                .header p {
+                    font-size: 1.2rem;
+                    opacity: 0.9;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+                
+                .timeline {
+                    position: relative;
+                    margin-top: 2rem;
+                }
+                
+                .timeline::before {
+                    content: '';
+                    position: absolute;
+                    left: 2rem;
+                    top: 0;
+                    bottom: 0;
+                    width: 2px;
+                    background: linear-gradient(to bottom, #4CAF50, #2196F3, #FF9800, #E91E63);
+                }
+                
+                .timeline-item {
+                    position: relative;
+                    margin-bottom: 2rem;
+                    margin-left: 4rem;
+                    background: white;
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+                
+                .timeline-item:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+                }
+                
+                .timeline-item::before {
+                    content: '';
+                    position: absolute;
+                    left: -3rem;
+                    top: 2rem;
+                    width: 16px;
+                    height: 16px;
+                    background: #4CAF50;
+                    border: 3px solid white;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+                }
+                
+                .timeline-item:nth-child(4n+2)::before { background: #2196F3; box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3); }
+                .timeline-item:nth-child(4n+3)::before { background: #FF9800; box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.3); }
+                .timeline-item:nth-child(4n+4)::before { background: #E91E63; box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.3); }
+                
+                .timeline-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 1rem;
+                    flex-wrap: wrap;
+                    gap: 1rem;
+                }
+                
+                .timeline-title {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: #2c3e50;
+                    text-decoration: none;
+                    flex-grow: 1;
+                    transition: color 0.3s ease;
+                }
+                
+                .timeline-title:hover {
+                    color: #3498db;
+                }
+                
+                .timeline-meta {
+                    display: flex;
+                    gap: 1rem;
+                    align-items: center;
+                    flex-shrink: 0;
+                }
+                
+                .timeline-date {
+                    background: linear-gradient(135deg, #667eea, #764ba2);
+                    color: white;
+                    padding: 0.5rem 1rem;
+                    border-radius: 20px;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
+                
+                .timeline-category {
+                    background: #f8f9fa;
+                    color: #6c757d;
+                    padding: 0.4rem 0.8rem;
+                    border-radius: 15px;
+                    font-size: 0.8rem;
+                    font-weight: 500;
+                    border: 1px solid #e9ecef;
+                }
+                
+                .timeline-description {
+                    color: #5a6c7d;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                }
+                
+                .loading {
+                    text-align: center;
+                    padding: 3rem;
+                    color: white;
+                    font-size: 1.2rem;
+                }
+                
+                .error {
+                    background: #f8d7da;
+                    color: #721c24;
+                    padding: 1rem;
+                    border-radius: 8px;
+                    border: 1px solid #f5c6cb;
+                    margin-bottom: 2rem;
+                }
+                
+                .stats {
+                    background: rgba(255,255,255,0.95);
+                    border-radius: 12px;
+                    padding: 1.5rem;
+                    margin-bottom: 2rem;
+                    backdrop-filter: blur(10px);
+                    border: 1px solid rgba(255,255,255,0.2);
+                }
+                
+                .stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1rem;
+                    text-align: center;
+                }
+                
+                .stat-item {
+                    padding: 1rem;
+                }
+                
+                .stat-number {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    color: #667eea;
+                    display: block;
+                }
+                
+                .stat-label {
+                    color: #666;
+                    font-size: 0.9rem;
+                    margin-top: 0.5rem;
+                }
+                
+                @media (max-width: 768px) {
+                    .container {
+                        padding: 1rem;
+                    }
+                    
+                    .header h1 {
+                        font-size: 2rem;
+                    }
+                    
+                    .timeline::before {
+                        left: 1rem;
+                    }
+                    
+                    .timeline-item {
+                        margin-left: 2rem;
+                        padding: 1rem;
+                    }
+                    
+                    .timeline-item::before {
+                        left: -2rem;
+                    }
+                    
+                    .timeline-header {
+                        flex-direction: column;
+                        align-items: stretch;
+                    }
+                    
+                    .timeline-meta {
+                        justify-content: space-between;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>Today I Learned</h1>
+                    <p>A timeline of discoveries, learnings, and insights from my development journey</p>
+                </div>
+                
+                <div class="stats" id="stats" style="display: none;">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalEntries">0</span>
+                            <div class="stat-label">Total Entries</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="categoriesCount">0</span>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="latestEntry">-</span>
+                            <div class="stat-label">Latest Entry</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading" id="loading">Loading timeline...</div>
+                <div class="error" id="error" style="display: none;"></div>
+                <div class="timeline" id="timeline"></div>
+            </div>
+        
+            <script>
+                async function loadTimeline() {
+                    try {
+                        const response = await fetch('timeline-data.json');
+                        if (!response.ok) {
+                            throw new Error('Failed to load timeline data');
+                        }
+                        
+                        const entries = await response.json();
+                        displayTimeline(entries);
+                        displayStats(entries);
+                        
+                    } catch (error) {
+                        console.error('Error loading timeline:', error);
+                        document.getElementById('loading').style.display = 'none';
+                        document.getElementById('error').style.display = 'block';
+                        document.getElementById('error').textContent = 'Failed to load timeline. Please try again later.';
+                    }
+                }
+                
+                function displayStats(entries) {
+                    const categories = [...new Set(entries.map(entry => entry.category))];
+                    const latest = entries.length > 0 ? new Date(entries[0].date).toLocaleDateString() : '-';
+                    
+                    document.getElementById('totalEntries').textContent = entries.length;
+                    document.getElementById('categoriesCount').textContent = categories.length;
+                    document.getElementById('latestEntry').textContent = latest;
+                    document.getElementById('stats').style.display = 'block';
+                }
+                
+                function displayTimeline(entries) {
+                    const timelineContainer = document.getElementById('timeline');
+                    const loading = document.getElementById('loading');
+                    
+                    loading.style.display = 'none';
+                    
+                    if (entries.length === 0) {
+                        timelineContainer.innerHTML = '<p style="text-align: center; color: white;">No entries found.</p>';
+                        return;
+                    }
+                    
+                    const timelineHTML = entries.map(entry => {
+                        const date = new Date(entry.date).toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric'
+                        });
+                        
+                        return `
+                            <div class="timeline-item">
+                                <div class="timeline-header">
+                                    <a href="${entry.url}" class="timeline-title" target="_blank" rel="noopener noreferrer">
+                                        ${entry.title}
+                                    </a>
+                                    <div class="timeline-meta">
+                                        <span class="timeline-category">${entry.category}</span>
+                                        <span class="timeline-date">${date}</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-description">
+                                    ${entry.description}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                    
+                    timelineContainer.innerHTML = timelineHTML;
+                }
+                
+                // Load timeline on page load
+                loadTimeline();
+            </script>
+        </body>
+        </html>
+        EOF
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'docs'
+        
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-timeline
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
