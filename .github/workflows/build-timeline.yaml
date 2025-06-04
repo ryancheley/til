@@ -219,15 +219,21 @@ jobs:
                 
                 .filter-group {
                     display: flex;
-                    flex-wrap: wrap;
-                    gap: 0.5rem;
-                    align-items: center;
+                    flex-direction: column;
+                    gap: 1rem;
                 }
                 
                 .filter-label {
                     font-weight: 600;
-                    margin-right: 1rem;
                     color: #666;
+                    margin-bottom: 0.5rem;
+                }
+                
+                .category-filters-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 0.5rem;
+                    align-items: center;
                 }
                 
                 .category-filter {
@@ -437,13 +443,11 @@ jobs:
                     }
                     
                     .filter-group {
-                        flex-direction: column;
-                        align-items: stretch;
                         gap: 1rem;
                     }
                     
-                    .category-filter {
-                        text-align: center;
+                    .category-filters-container {
+                        justify-content: center;
                     }
                 }
             </style>
@@ -479,7 +483,7 @@ jobs:
                 <div class="filters" id="filters" style="display: none;">
                     <div class="filter-group">
                         <span class="filter-label">Filter by category:</span>
-                        <div id="categoryFilters"></div>
+                        <div class="category-filters-container" id="categoryFilters"></div>
                     </div>
                 </div>
                 
