@@ -7,7 +7,7 @@ I **think** I had heard of them before, but what really blew my mind was:
 1. They can be project specific
 2. The can be directory specific
 
-Since these settings are stored in `.vscode/settings.json` maybe I should have realized that they were project specifc, but seeing it written out explicitly helped me make the connection for real.
+Since these settings are stored in `.vscode/settings.json` maybe I should have realized that they were project specific, but seeing it written out explicitly helped me make the connection for real.
 
 But the idea that they could be directory specific was 🤯
 

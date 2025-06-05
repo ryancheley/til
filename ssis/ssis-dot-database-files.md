@@ -1,14 +1,14 @@
 # SSIS .database files
 
-When you open an SSIS solution (aka `sln` file) a `database` file is expected to be in the same directory, and if it's not it will be automtically created.
+When you open an SSIS solution (aka `sln` file) a `database` file is expected to be in the same directory, and if it's not it will be automatically created.
 
-If you don't include the `*.database` in your VCS then some weird stuff can happen. When the ETL team at work migrated over to git last September we added `*.database` to the `.gitignore` file beliving that it wasn't something that should be source controlled. 
+If you don't include the `*.database` in your VCS then some weird stuff can happen. When the ETL team at work migrated over to git last September we added `*.database` to the `.gitignore` file believing that it wasn't something that should be source controlled. 
 
 What we've seen over the last several months are cases where a developer will open the solution, not make any changes, but git will recognize a change because of the `.database` file that was created and then linked up to the solution. 
 
 So I wanted to find out what exactly the `.database` file is, and what it does. 
 
-Per the [Micrsoft docs](https://learn.microsoft.com/en-us/sql/integration-services/integration-services-ssis-projects-and-solutions?view=sql-server-ver16&redirectedfrom=MSDN#files-in-integration-services-projects) this file
+Per the [Microsoft docs](https://learn.microsoft.com/en-us/sql/integration-services/integration-services-ssis-projects-and-solutions?view=sql-server-ver16&redirectedfrom=MSDN#files-in-integration-services-projects) this file
 
 > contains information that SQL Server Data Tools (SSDT) requires to open the Integration Services project.
 

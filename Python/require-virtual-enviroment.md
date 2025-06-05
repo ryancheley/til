@@ -1,6 +1,6 @@
 # Require a Virtual Environment to install packages
 
-On Mastodon today Trey Hunner [posted](https://mastodon.social/@treyhunner/112032637878747686) about disallowing pip install outside of a virutal enviroment. 
+On Mastodon today Trey Hunner [posted](https://mastodon.social/@treyhunner/112032637878747686) about disallowing pip install outside of a virtual environment. 
 
 He posted a link to a [Stack Exchange post](https://unix.stackexchange.com/questions/492041/is-there-a-way-to-disable-pip-outside-of-a-virtual-environment) where I saw something I knew about, but always fail to implement. The use of an Environment Variable called `PIP_REQUIRE_VIRTUALENV`. I have used this on my MacBook Pro and in some linux servers, but somehow it's been overwritten so my system Python versions always have a ton of crap in them that they shouldn't. 
 

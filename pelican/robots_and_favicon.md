@@ -1,6 +1,6 @@
 # Adding a robots.txt and favicon.ico files to my Pelican Site
 
-I was looking at the error logs for my blog and noticied a pretty consistent theme:
+I was looking at the error logs for my blog and noticed a pretty consistent theme:
 
 A bunch of [404 errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404) for the `robots.txt` and `favicon.ico` so I decided to figure out how to add them to my [Pelican](favicon.ico) driven site!
 

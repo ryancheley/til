@@ -39,4 +39,4 @@ Some caveats:
 
 * I removed the `soundness check`, the `Setup Node.js` and the `Deploy Datasette using Vercel` steps as they didn't apply to my situation. 
 
-Once you have all of that you should be able to succesfully build a TIL a la Simon Willison. 
+Once you have all of that you should be able to successfully build a TIL a la Simon Willison. 
