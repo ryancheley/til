@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->51<!-- count ends --> TILs so far.
+<!-- count starts -->52<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -110,6 +110,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 ## uv
 
 * [uv venv and missing pip](https://github.com/ryancheley/til/blob/main/uv/uv-venv.md) - 2024-11-03
+* [Run remote scripts with uv](https://github.com/ryancheley/til/blob/main/uv/run-remote-scripts-with-uv.md) - 2025-06-04
 
 ## iOS
 
