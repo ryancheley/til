@@ -47,7 +47,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 
 * [Delay of Game on Failed Coaches Challenge](https://github.com/ryancheley/til/blob/main/hockey/delay-of-game-on-failed-coaches-challenge.md) - 2023-12-21
 * [Persisting a Fight](https://github.com/ryancheley/til/blob/main/hockey/persiting-a-fight.md) - 2024-01-24
-* [While watching [a video on YouTube](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiu4OSS1PmEAxWck4kEHedYCXoQwqsBegQICBAG&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DU2uwdVSfaDo&usg=AOvVaw0xGYxzDUlv6v82tY7FAAuW&opi=89978449) the other day I learned that](https://github.com/ryancheley/til/blob/main/hockey/pull-yer-goalie-eh.md) - 2024-03-16
+* [Pull Yer Goalie Eh](https://github.com/ryancheley/til/blob/main/hockey/pull-yer-goalie-eh.md) - 2024-03-16
 
 ## sqlite
 
