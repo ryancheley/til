@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->50<!-- count ends --> TILs so far.
+<!-- count starts -->51<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -97,6 +97,7 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 
 * [Adding objects in Python](https://github.com/ryancheley/til/blob/main/Python/adding-objects-in-python.md) - 2024-02-04
 * [Require a Virtual Environment to install packages](https://github.com/ryancheley/til/blob/main/Python/require-virtual-enviroment.md) - 2024-03-03
+* [Fork of YouTube Download (youtube-dl) written in Python. I learned about it from a [gist](https://gist.github.com/pauloxnet/0fa24efcca6946550eeee2133aa3fbd0) that Paulo Melichore.](https://github.com/ryancheley/til/blob/main/Python/yt-dlp.md) - 2025-06-04
 
 ## Docker
 
