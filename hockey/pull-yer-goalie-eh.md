@@ -1,3 +1,5 @@
+Pull Yer Goalie Eh
+
 While watching [a video on YouTube](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiu4OSS1PmEAxWck4kEHedYCXoQwqsBegQICBAG&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DU2uwdVSfaDo&usg=AOvVaw0xGYxzDUlv6v82tY7FAAuW&opi=89978449) the other day I learned that 
 
 > NHL rules stipulate that a team that pulls the goalie for an extra attacker and winds up losing on an empty-net goal forfeits the point they get for simply getting to overtime. 
