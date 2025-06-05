@@ -41,6 +41,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install markdown beautifulsoup4
         
     - name: Build database
       run: python build_database.py
@@ -51,7 +52,60 @@ jobs:
         import sqlite3
         import json
         import os
+        import re
         from pathlib import Path
+        import markdown
+        from bs4 import BeautifulSoup
+        
+        # Initialize markdown processor with extensions
+        md = markdown.Markdown(extensions=[
+            'extra',      # Tables, code blocks, etc.
+            'codehilite', # Syntax highlighting
+            'toc',        # Table of contents
+            'nl2br',      # Newline to <br>
+        ])
+        
+        def extract_description_from_markdown(markdown_text):
+            """Extract a clean description from markdown content."""
+            # Convert markdown to HTML
+            html = md.convert(markdown_text)
+            
+            # Parse HTML with BeautifulSoup
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            # Remove any code blocks, headers, and other non-descriptive elements
+            for element in soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'code']):
+                element.decompose()
+            
+            # Get the first paragraph or meaningful text
+            paragraphs = soup.find_all('p')
+            for p in paragraphs:
+                text = p.get_text().strip()
+                if text and len(text) > 20:  # Ignore very short paragraphs
+                    # Convert back to HTML but keep basic formatting
+                    # Get the HTML content of the paragraph
+                    html_content = str(p)
+                    
+                    # Truncate if too long but preserve HTML tags
+                    if len(text) > 300:
+                        # Truncate the text content but keep some HTML
+                        truncated = text[:300] + '...'
+                        # Create a new paragraph with truncated content
+                        html_content = f'<p>{truncated}</p>'
+                    
+                    return html_content
+            
+            # Fallback to first non-empty text if no paragraphs found
+            text = soup.get_text().strip()
+            if text:
+                lines = text.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if line and len(line) > 20:
+                        truncated = line[:300] + '...' if len(line) > 300 else line
+                        return f'<p>{truncated}</p>'
+            
+            return '<p>No description available</p>'
         
         # Connect to the SQLite database
         db_path = Path("tils.db")
@@ -81,25 +135,15 @@ jobs:
         
         entries = []
         for row in cursor:
-            # Extract first paragraph as description, excluding headers and code blocks
-            lines = row['body'].split('\n')
-            description = ''
-            for line in lines:
-                line = line.strip()
-                if line and not line.startswith('#') and not line.startswith('```') and line != '---':
-                    description = line
-                    break
-            
-            # Clean up the description
-            if len(description) > 200:
-                description = description[:200] + '...'
+            # Extract and render description from markdown
+            description_html = extract_description_from_markdown(row['body'])
             
             # Extract date from created_utc (YYYY-MM-DD format)
             created_date = row['created_utc'].split('T')[0] if row['created_utc'] else row['created'].split('T')[0]
             
             entry = {
                 'title': row['title'],
-                'description': description or 'No description available',
+                'description': description_html,
                 'date': created_date,
                 'url': row['url'],
                 'category': row['topic'],
@@ -360,6 +404,41 @@ jobs:
                     color: #5a6c7d;
                     line-height: 1.6;
                     font-size: 1rem;
+                }
+                
+                .timeline-description p {
+                    margin: 0 0 0.5rem 0;
+                }
+                
+                .timeline-description p:last-child {
+                    margin-bottom: 0;
+                }
+                
+                .timeline-description strong {
+                    font-weight: 600;
+                    color: #2c3e50;
+                }
+                
+                .timeline-description em {
+                    font-style: italic;
+                }
+                
+                .timeline-description code {
+                    background: #f4f4f4;
+                    padding: 0.2rem 0.4rem;
+                    border-radius: 3px;
+                    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+                    font-size: 0.9em;
+                    color: #e91e63;
+                }
+                
+                .timeline-description a {
+                    color: #3498db;
+                    text-decoration: none;
+                }
+                
+                .timeline-description a:hover {
+                    text-decoration: underline;
                 }
                 
                 .loading {
