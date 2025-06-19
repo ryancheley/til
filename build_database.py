@@ -16,7 +16,13 @@ root = pathlib.Path(__file__).parent.resolve()
 def created_changed_times(repo_path, ref="main"):
     created_changed_times = {}
     repo = git.Repo(repo_path, odbt=git.GitDB)
-    commits = reversed(list(repo.iter_commits(ref)))
+    
+    # Try to use the specified ref, but fall back to HEAD if it doesn't exist
+    try:
+        commits = reversed(list(repo.iter_commits(ref)))
+    except git.exc.GitCommandError:
+        # If the ref doesn't exist (e.g., in PR context), use HEAD instead
+        commits = reversed(list(repo.iter_commits("HEAD")))
     for commit in commits:
         dt = commit.committed_datetime
         affected_files = list(commit.stats.files.keys())
