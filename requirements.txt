@@ -1,5 +1,5 @@
 GitPython
-sqlite-utils>=4.1.1
+sqlite-utils>=4.2.1
 beautifulsoup4
 datasette>=0.65.3
 datasette-atom>=0.9
