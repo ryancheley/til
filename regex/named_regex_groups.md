@@ -24,6 +24,6 @@ Again, per the docs:
         r'"')
 ```
 
-You can now more easily reference `zonen` instead of trying to remember that its group 9. 
+You can now more easily reference `zonen` instead of trying to remember that its group 9.
 
-Anyway, simply amazing and I'm looking forward to using it in the future. 
+Anyway, simply amazing and I'm looking forward to using it in the future.

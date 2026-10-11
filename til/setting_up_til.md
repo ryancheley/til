@@ -1,6 +1,6 @@
 # Learning how to get it set up
 
-It took some doing, but I was able to get my TIL set up. I used Simon Willison's TIL as inspiration. It took a bit of doing as it wasn't just a 'copy and paste' sort of thing. 
+It took some doing, but I was able to get my TIL set up. I used Simon Willison's TIL as inspiration. It took a bit of doing as it wasn't just a 'copy and paste' sort of thing.
 
 To get something like this going you need to set up two repositories:
 
@@ -37,6 +37,6 @@ Finally, you'll need to [create a repository key](https://docs.github.com/en/git
 
 Some caveats:
 
-* I removed the `soundness check`, the `Setup Node.js` and the `Deploy Datasette using Vercel` steps as they didn't apply to my situation. 
+* I removed the `soundness check`, the `Setup Node.js` and the `Deploy Datasette using Vercel` steps as they didn't apply to my situation.
 
-Once you have all of that you should be able to successfully build a TIL a la Simon Willison. 
+Once you have all of that you should be able to successfully build a TIL a la Simon Willison.

@@ -1,6 +1,6 @@
 # css grid areas
 
-There is a css concept called `grid areas` that will allow you to visually layout your site. 
+There is a css concept called `grid areas` that will allow you to visually layout your site.
 
 Using an example from Julia Evan's zine [Hell Yes! CSS!]() page 17
 
@@ -18,9 +18,9 @@ Using an example from Julia Evan's zine [Hell Yes! CSS!]() page 17
 ```
 .grid {
 	display: grid;
-	grid-template-columns: 
+	grid-template-columns:
 		200px 800px;
-	grid-template-areas: 
+	grid-template-areas:
 		"header header"
 		"sidebar content";
 }

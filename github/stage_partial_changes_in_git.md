@@ -1,6 +1,6 @@
 # Stage Partial Changes in Git
 
-Today I learned about the use of the p flag on `git add`, i.e. `git add -p` which will allow you to interactively add files to a commit, i.e. stage partial changes. 
+Today I learned about the use of the p flag on `git add`, i.e. `git add -p` which will allow you to interactively add files to a commit, i.e. stage partial changes.
 
 Mind. Blown.
 

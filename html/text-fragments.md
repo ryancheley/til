@@ -11,4 +11,3 @@ Here's an [example link](https://www.espn.com/mlb/story/_/id/42105281/world-seri
 ```
 https://www.espn.com/mlb/story/_/id/42105281/world-series-2024-dave-roberts-los-angeles-dodgers-manager-vindication-hall-fame#:~:text="Focus,guy."
 ```
-

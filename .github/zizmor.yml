@@ -1,0 +1,11 @@
+# ponytail: tag pins are fine here (dependabot keeps actions current);
+# relax the default hash-pin requirement to ref/tag pinning.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "*": ref-pin
+  artipacked:
+    # build.yml reuses the checkout credentials to push README/db updates.
+    ignore:
+      - build.yml

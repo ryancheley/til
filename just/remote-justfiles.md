@@ -1,6 +1,6 @@
 Remote justfile
 
-TLDR: you can have remote `justfile` to help keep `justfile`s DRY. 
+TLDR: you can have remote `justfile` to help keep `justfile`s DRY.
 
 ## Discovery
 
@@ -24,7 +24,7 @@ fetch:
 
 ## Why It Matters
 
-just is an amazingly helpful project and knowing that you can have these remote `justfiles` to assist in keeping your `justfile`s DRY. 
+just is an amazingly helpful project and knowing that you can have these remote `justfiles` to assist in keeping your `justfile`s DRY.
 
 ## Source
 The [Just Programmer's Manual](https://just.systems/man/en/remote-justfiles.html)

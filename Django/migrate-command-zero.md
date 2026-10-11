@@ -16,4 +16,4 @@ I had never seen the use of the option `zero` and decided to dig into it a littl
 
 > If you want to reverse all migrations applied for an app, use the name zero
 
-It's good to know that **if** I need to undo all of the migrations of an app I can. 
+It's good to know that **if** I need to undo all of the migrations of an app I can.

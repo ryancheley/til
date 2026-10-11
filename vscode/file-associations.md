@@ -1,6 +1,6 @@
 # File Associations
 
-I was reading through my backlog of articles today and came across [this](https://marijkeluttekes.dev/blog/articles/2023/07/27/quick-tip-set-folder-based-file-associations-in-visual-studio-code/) by Marijke talking about File associations in VS Code. 
+I was reading through my backlog of articles today and came across [this](https://marijkeluttekes.dev/blog/articles/2023/07/27/quick-tip-set-folder-based-file-associations-in-visual-studio-code/) by Marijke talking about File associations in VS Code.
 
 I **think** I had heard of them before, but what really blew my mind was:
 
@@ -24,4 +24,3 @@ From Marijke's post here's an example:
 ```
 
 Here `django-html` is used to open any `html` files in the `src` directory (or any of it's sub directories)
-

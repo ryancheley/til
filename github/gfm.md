@@ -5,4 +5,3 @@ Adam Johnson had a recent [post](https://adamj.eu/tech/2025/04/16/github-render-
 Using the cli you can turn the content of a `md` file into GFM by using the following
 
 	gh api markdown -F mode=gfm -F text=@example.md -F context={owner}/{repo}
-	

@@ -1,8 +1,8 @@
 # Load Balancers
 
-I'm trying to learn more about load balancers and it looks like they're not actually that hard to set up and/or think about. 
+I'm trying to learn more about load balancers and it looks like they're not actually that hard to set up and/or think about.
 
-At my day job we have a hardware load balancer in front of a set of Remote Desktops that route users to a VM for an application. I've never had to really do anything with it, but I really wanted to try and figure out how would I set that up in a web application. 
+At my day job we have a hardware load balancer in front of a set of Remote Desktops that route users to a VM for an application. I've never had to really do anything with it, but I really wanted to try and figure out how would I set that up in a web application.
 
 I watched [this](https://youtu.be/v81CzSeiQjo?si=QXSpFvZbUgL8qZ6u) short video and it seems pretty straight forward using `nginx`
 
@@ -29,8 +29,8 @@ server {
 }
 ```
 
-You can additionally set the load balancing method (Round Robin, Least Connection, IP Hash, etc) and you can configure logs that show which call is going to which server. 
+You can additionally set the load balancing method (Round Robin, Least Connection, IP Hash, etc) and you can configure logs that show which call is going to which server.
 
-Then you set your domain at your registrar of choice (like [Hover](https://www.hover.com)) to point to your load balancer IP (10.120.1.4) and it will route the traffic to where it needs to go. 
+Then you set your domain at your registrar of choice (like [Hover](https://www.hover.com)) to point to your load balancer IP (10.120.1.4) and it will route the traffic to where it needs to go.
 
 Digital Ocean does offer this as a service, but it's $12 per node per month and it seems to me that you could just as easily spin up a droplet and do it yourself

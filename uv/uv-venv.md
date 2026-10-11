@@ -4,7 +4,7 @@ The amazing project `uv` speeds things up really quickly, especially when creati
 
 When creating a virtual environment with `python -m venv venv` pip is installed by default. This isn't true with `uv venv venv`
 
-In order to get the same behavior you need to run 
+In order to get the same behavior you need to run
 
 	uv venv venv --seed
 
