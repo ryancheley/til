@@ -43,17 +43,17 @@ restore file:
     psql mydb < {{file}}
 ```
 
-You can then call these recipes in the terminal 
+You can then call these recipes in the terminal
 
 ```bash
 just database::migrate
 just database::backup
 just database::restore db_20250921
 ```
-	
+
 ## Why It Matters
 
-The idea of a "single file to rule them all" is great, but sometimes that file might be too big to reason about. just Groups can be  helpful, but you may want to start splitting items out based on specific use cases or for conditional imports. 
+The idea of a "single file to rule them all" is great, but sometimes that file might be too big to reason about. just Groups can be  helpful, but you may want to start splitting items out based on specific use cases or for conditional imports.
 
 ## Source
 The [Just Programmer's Manual](https://just.systems/man/en/modules1190.html)

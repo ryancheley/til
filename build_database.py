@@ -1,14 +1,14 @@
-from datetime import timezone
-import httpx
-import git
 import os
 import pathlib
-from urllib.parse import urlencode
-import sqlite_utils
-from sqlite_utils.db import NotFoundError
 import time
+from datetime import UTC
 
 import frontmatter
+import httpx
+import sqlite_utils
+from sqlite_utils.db import NotFoundError
+
+import git
 
 root = pathlib.Path(__file__).parent.resolve()
 
@@ -16,7 +16,7 @@ root = pathlib.Path(__file__).parent.resolve()
 def created_changed_times(repo_path, ref="main"):
     created_changed_times = {}
     repo = git.Repo(repo_path, odbt=git.GitDB)
-    
+
     # Try to use the specified ref, but fall back to HEAD if it doesn't exist
     try:
         commits = reversed(list(repo.iter_commits(ref)))
@@ -30,12 +30,12 @@ def created_changed_times(repo_path, ref="main"):
             if filepath not in created_changed_times:
                 created_changed_times[filepath] = {
                     "created": dt.isoformat(),
-                    "created_utc": dt.astimezone(timezone.utc).isoformat(),
+                    "created_utc": dt.astimezone(UTC).isoformat(),
                 }
             created_changed_times[filepath].update(
                 {
                     "updated": dt.isoformat(),
-                    "updated_utc": dt.astimezone(timezone.utc).isoformat(),
+                    "updated_utc": dt.astimezone(UTC).isoformat(),
                 }
             )
     return created_changed_times
@@ -47,11 +47,11 @@ def build_database(repo_path):
     table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = frontmatter.load(filepath)
-        title = fp.content.split('\n')[0].lstrip("#").strip()
+        title = fp.content.split("\n")[0].lstrip("#").strip()
         body = fp.content
         path = str(filepath.relative_to(root))
         slug = filepath.stem
-        url = "https://github.com/ryancheley/til/blob/main/{}".format(path)
+        url = f"https://github.com/ryancheley/til/blob/main/{path}"
         # Do we need to render the markdown?
         path_slug = path.replace("/", "_")
         try:
@@ -89,15 +89,15 @@ def build_database(repo_path):
                 )
                 if response.status_code == 200:
                     record["html"] = response.text
-                    print("Rendered HTML for {}".format(path))
+                    print(f"Rendered HTML for {path}")
                     break
                 else:
                     print("  sleeping 60s")
                     time.sleep(60)
                     retries += 1
             else:
-                assert False, "Could not render {} - last response was {}".format(
-                    path, response.headers
+                assert False, (
+                    f"Could not render {path} - last response was {response.headers}"
                 )
         record.update(all_times[path])
         with db.conn:

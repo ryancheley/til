@@ -10,12 +10,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Check out repo
       uses: actions/checkout@v7
       # We need full history to introspect created/updated:
       with:
-        fetch-depth: 0  
+        fetch-depth: 0
     - name: Set up Python
       uses: actions/setup-python@v7
       with:

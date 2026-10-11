@@ -6,20 +6,20 @@ TLDR: column is a linux cli that lets you output stuff in columns
 Stumbled across a video on YouTube
 
 ## Explanation
-the `column` command will take output and let you put it into columnar to make it easier to read. It also has a table command `-t` to display it as a table. 
+the `column` command will take output and let you put it into columnar to make it easier to read. It also has a table command `-t` to display it as a table.
 
 You can also output as json with the `-J` command
 
 ## Example
 
-You can run something like 
+You can run something like
 
 ```bash
-cat /etc/passwd | column -t -s ":" -N USER,PW,UID,GUID,X,HOME,SHELL -H PW,X 
+cat /etc/passwd | column -t -s ":" -N USER,PW,UID,GUID,X,HOME,SHELL -H PW,X
 
 ```
 
-This will output a table of the users on a system with their 
+This will output a table of the users on a system with their
 
 - Username
 - User ID

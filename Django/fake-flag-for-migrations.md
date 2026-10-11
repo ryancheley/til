@@ -1,10 +1,10 @@
 Django migrations fake flag
 
-Today while I was working on a [feature to consolidate the settings files](https://github.com/djangopackages/djangopackages/issues/915) for DjangoPackages to consolidate the settings files I ran into an error about missing column when I would log into the admin. 
+Today while I was working on a [feature to consolidate the settings files](https://github.com/djangopackages/djangopackages/issues/915) for DjangoPackages to consolidate the settings files I ran into an error about missing column when I would log into the admin.
 
-The message was essentially that the field `share_favorites` was missing from the `profiles` table. 
+The message was essentially that the field `share_favorites` was missing from the `profiles` table.
 
-The confusing thing for me was that when I would run the migration command I would get an error that the field `ExtraField` was already present in the profiles table. 
+The confusing thing for me was that when I would run the migration command I would get an error that the field `ExtraField` was already present in the profiles table.
 
 I then took at a look at the migrations with the showmigrations command and noticed that there were 2 migrations that hadn't been run from the profiles model
 

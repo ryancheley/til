@@ -1,6 +1,6 @@
 # Default Environment Variables
 
-While watching the video [Introduction to GitHub Actions: Understanding Key Terms and Building Your First](https://cur.at/ouOxRu3?m=web&sid=CRet3dT) from DCUS 2023 part of the talk showed `$GITHUB_OUTPUT` which I had seen before, but didn't really understand. The talk mentioned that by sending data to that variable you can access it later. That lead me to try and find all of the GitHub environment variables that exist to see what is possible. 
+While watching the video [Introduction to GitHub Actions: Understanding Key Terms and Building Your First](https://cur.at/ouOxRu3?m=web&sid=CRet3dT) from DCUS 2023 part of the talk showed `$GITHUB_OUTPUT` which I had seen before, but didn't really understand. The talk mentioned that by sending data to that variable you can access it later. That lead me to try and find all of the GitHub environment variables that exist to see what is possible.
 
 I found [this](https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables) and there are some really interesting things here. Besides `$GITHUB_OUTPUT` which is
 

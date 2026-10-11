@@ -1,12 +1,12 @@
 # Adding setproctitle to Django
 
-In a recent episode of [Python Bytes](https://pythonbytes.fm/episodes/show/313/programming-robots-with-a-marker) cohost [Michael Kennedy](https://mastodon.social/@mkennedy@fosstodon.org) highlighted a new package called `setproctitle`. 
+In a recent episode of [Python Bytes](https://pythonbytes.fm/episodes/show/313/programming-robots-with-a-marker) cohost [Michael Kennedy](https://mastodon.social/@mkennedy@fosstodon.org) highlighted a new package called `setproctitle`.
 
 In a nutshell, `setproctitle`
 
 > allows a process to change its title (as displayed by system tools such as ps, top or MacOS Activity Monitor).
 
-I thought this would be a neat idea to try with one of my Django projects and it turns out it was straight forward to implement. 
+I thought this would be a neat idea to try with one of my Django projects and it turns out it was straight forward to implement.
 
 To set it up you:
 

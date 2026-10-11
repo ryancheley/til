@@ -6,17 +6,17 @@ A bunch of [404 errors](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 The [documentation](https://docs.getpelican.com/en/stable/tips.html?highlight=favicon#copy-static-files-to-the-root-of-your-site) is really good for showing what needs to be done
 
-In the `PATH` folder (which is determined by your settings in your `pelicanconf.py` file and in my case is `content`) you add a new directory to store your `robots.txt` and `favicon.ico` files. 
+In the `PATH` folder (which is determined by your settings in your `pelicanconf.py` file and in my case is `content`) you add a new directory to store your `robots.txt` and `favicon.ico` files.
 
-I opted for adding them to a new directory called `static`. 
+I opted for adding them to a new directory called `static`.
 
 Once that was decided I added a robots.txt files and my favicon.ico file to the static directory and updated my `pelicanconf.py` with the following settings:
 
 ```python
 STATIC_PATHS = [
-  "images", 
-  "static/robots.txt", #new
-  "static/favicon.ico" #new
+    "images",
+    "static/robots.txt",  # new
+    "static/favicon.ico",  # new
 ]
 
 # the setting below is entirely new

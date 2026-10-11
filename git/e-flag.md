@@ -24,7 +24,7 @@ super great thing added
 # On branch main
 # Changes to be committed:
 #   modified: test.txt
-# 
+#
 ```
 
 ## Why It Matters

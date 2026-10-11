@@ -26,7 +26,4 @@ class MyPerson(Person):
 
 This [video](https://youtu.be/KF2p-LQjZZ4?si=f6rp0lIlAckvTfNA) had an example show casing how to use proxy models with filters AND sorting and suddenly it clicked!
 
-My understanding is that a proxy model can be used to implement specific behavior that can be applied in specific situations, but which isn't suitable as a default. The example in the video shows the creation of a task with a State of 'In Progress' that is automatically set when using a Proxy model of TaskInProgress. 
-
-
-
+My understanding is that a proxy model can be used to implement specific behavior that can be applied in specific situations, but which isn't suitable as a default. The example in the video shows the creation of a task with a State of 'In Progress' that is automatically set when using a Proxy model of TaskInProgress.

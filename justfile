@@ -2,7 +2,7 @@
     just --list
 
 @check:
-    pre-commit run --all-files
+    prek run --all-files
 
 @codespell:
     uv run --with codespell codespell -i 3

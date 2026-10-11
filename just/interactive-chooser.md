@@ -31,7 +31,7 @@ In my personal blog I have a just file. Running `just --choose` and typing `cel`
 
 ## Why It Matters
 
-If you have lots of recipes (like [here](https://raw.githubusercontent.com/djangopackages/djangopackages/refs/heads/main/justfile)) it can make it easier to find the recipe you're looking for. 
+If you have lots of recipes (like [here](https://raw.githubusercontent.com/djangopackages/djangopackages/refs/heads/main/justfile)) it can make it easier to find the recipe you're looking for.
 
 ## Source
 The [Just Programmer's Manual](https://just.systems/man/en/selecting-recipes-to-run-with-an-interactive-chooser.html)
