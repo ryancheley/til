@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->54<!-- count ends --> TILs so far.
+<!-- count starts -->85<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -127,4 +127,38 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Remote justfile](https://github.com/ryancheley/til/blob/main/just/remote-justfiles.md) - 2025-01-23
 * [Interactive Chooser](https://github.com/ryancheley/til/blob/main/just/interactive-chooser.md) - 2025-01-24
 * [just modules](https://github.com/ryancheley/til/blob/main/just/modules.md) - 2025-09-21
+* [Run dependencies in parallel](https://github.com/ryancheley/til/blob/main/just/parallel.md) - 2026-10-29
+* [Shell-expanded strings](https://github.com/ryancheley/til/blob/main/just/shell-expanded-strings.md) - 2026-10-29
+* [default-list](https://github.com/ryancheley/til/blob/main/just/default-list.md) - 2026-10-29
+* [Recipe groups](https://github.com/ryancheley/til/blob/main/just/groups.md) - 2026-10-29
+* [Run recipes at the end of a recipe](https://github.com/ryancheley/til/blob/main/just/run-recipes-at-the-end.md) - 2026-10-29
+* [Variadic parameter defaults](https://github.com/ryancheley/til/blob/main/just/variadic-parameter-defaults.md) - 2026-10-29
+* [Private recipes](https://github.com/ryancheley/til/blob/main/just/private-recipes.md) - 2026-10-29
+* [Set the shell just uses](https://github.com/ryancheley/til/blob/main/just/set-shell.md) - 2026-10-29
+* [Recipe usage information](https://github.com/ryancheley/til/blob/main/just/usage.md) - 2026-10-29
+* [Confirm before running a recipe](https://github.com/ryancheley/til/blob/main/just/confirm.md) - 2026-10-29
+* [Documenting recipes with [doc()]](https://github.com/ryancheley/til/blob/main/just/doc-attribute.md) - 2026-10-29
+* [Importing other justfiles](https://github.com/ryancheley/til/blob/main/just/imports.md) - 2026-10-29
+* [Set the working directory](https://github.com/ryancheley/til/blob/main/just/working-directory.md) - 2026-10-29
+* [Format your justfile](https://github.com/ryancheley/til/blob/main/just/format.md) - 2026-10-29
+* [Constrain parameters with a regex](https://github.com/ryancheley/til/blob/main/just/parameter-patterns.md) - 2026-10-29
+* [Limit the number of variadic arguments](https://github.com/ryancheley/til/blob/main/just/limit-variadic-parameters.md) - 2026-10-29
+* [Fall back to a parent justfile](https://github.com/ryancheley/til/blob/main/just/fallback.md) - 2026-10-29
+
+## atuin
+
+* [Disable Atuin's up arrow binding](https://github.com/ryancheley/til/blob/main/atuin/disable-up-arrow.md) - 2026-10-29
+* [Atuin stats](https://github.com/ryancheley/til/blob/main/atuin/stats.md) - 2026-10-29
+* [Custom Atuin theme](https://github.com/ryancheley/til/blob/main/atuin/themes.md) - 2026-10-29
+* [Filter modes and ctrl-r](https://github.com/ryancheley/til/blob/main/atuin/filter-modes.md) - 2026-10-29
+* [Start an Atuin search with a term](https://github.com/ryancheley/til/blob/main/atuin/search-with-a-term.md) - 2026-10-29
+* [Run commands straight from Atuin with enter_accept](https://github.com/ryancheley/til/blob/main/atuin/enter-accept.md) - 2026-10-29
+* [Deduplicate your Atuin history](https://github.com/ryancheley/til/blob/main/atuin/dedup.md) - 2026-10-29
+* [Map Atuin hosts to hostnames](https://github.com/ryancheley/til/blob/main/atuin/store-status.md) - 2026-10-29
+* [Search command output with Atuin](https://github.com/ryancheley/til/blob/main/atuin/output-search.md) - 2026-10-29
+* [Capture AI agent commands in Atuin](https://github.com/ryancheley/til/blob/main/atuin/agent-hooks.md) - 2026-10-29
+* [Atuin scripts](https://github.com/ryancheley/til/blob/main/atuin/scripts.md) - 2026-10-29
+* [Self-hosted Atuin sync server](https://github.com/ryancheley/til/blob/main/atuin/self-hosted-sync-server.md) - 2026-10-29
+* [Find your Atuin config with atuin info](https://github.com/ryancheley/til/blob/main/atuin/atuin-info.md) - 2026-10-29
+* [Show a command's history with ctrl-o](https://github.com/ryancheley/til/blob/main/atuin/ctrl-o.md) - 2026-10-29
 <!-- index ends -->
