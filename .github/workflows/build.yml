@@ -7,6 +7,8 @@ on:
     paths-ignore:
     - README.md
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,15 +16,15 @@ jobs:
       contents: write
     steps:
     - name: Check out repo
-      uses: actions/checkout@v7
+      uses: actions/checkout@v7.0.1
       # We need full history to introspect created/updated:
       with:
         fetch-depth: 0
     - name: Set up Python
-      uses: actions/setup-python@v7
+      uses: actions/setup-python@v7.1.0
       with:
         python-version: 3.12
-    - uses: actions/cache@v6
+    - uses: actions/cache@v6.1.0
       name: Configure pip caching
       with:
         path: ~/.cache/pip
