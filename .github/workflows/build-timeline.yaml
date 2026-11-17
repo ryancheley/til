@@ -9,26 +9,27 @@ on:
     # Rebuild daily at 6 AM UTC
     - cron: '0 6 * * *'
 
-permissions:
-  contents: read
+permissions: {}
 
 jobs:
   build-timeline:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
     - name: Check out repo
-      uses: actions/checkout@v7
+      uses: actions/checkout@v7.0.1
       with:
         fetch-depth: 0  # Need full history for git analysis
         persist-credentials: false
 
     - name: Set up Python
-      uses: actions/setup-python@v7
+      uses: actions/setup-python@v7.1.0
       with:
         python-version: 3.12
 
-    - uses: actions/cache@v6
+    - uses: actions/cache@v6.1.0
       name: Configure pip caching
       with:
         path: ~/.cache/pip
@@ -716,10 +717,10 @@ jobs:
         EOF
 
     - name: Setup Pages
-      uses: actions/configure-pages@v6
+      uses: actions/configure-pages@v6.0.0
 
     - name: Upload artifact
-      uses: actions/upload-pages-artifact@v5
+      uses: actions/upload-pages-artifact@v5.0.0
       with:
         path: 'docs'
 
@@ -737,4 +738,19 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v5
+      uses: actions/deploy-pages@v5.0.1
+
+  # Fails when .github/workflows/actions.lock is out of sync with the
+  # workflows or a locked pin no longer verifies upstream.
+  lockfile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+    - uses: actions/checkout@v7.0.1
+      with:
+        persist-credentials: false
+    - run: gh extension install github/gh-actions-lock --pin v0.4.1
+    - run: gh actions-lock --verify
