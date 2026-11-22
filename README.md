@@ -2,7 +2,7 @@
 
 My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/simonw/til) who was inspired by [jbranchaud/til](https://github.com/jbranchaud/til), which he spotted [on Hacker News](https://news.ycombinator.com/item?id=22908044).
 
-<!-- count starts -->85<!-- count ends --> TILs so far.
+<!-- count starts -->86<!-- count ends --> TILs so far.
 
 <!-- index starts -->
 ## til
@@ -161,4 +161,8 @@ My Today I Learned snippets. Inspired by [Simon Willison](https://github.com/sim
 * [Self-hosted Atuin sync server](https://github.com/ryancheley/til/blob/main/atuin/self-hosted-sync-server.md) - 2026-10-29
 * [Find your Atuin config with atuin info](https://github.com/ryancheley/til/blob/main/atuin/atuin-info.md) - 2026-10-29
 * [Show a command's history with ctrl-o](https://github.com/ryancheley/til/blob/main/atuin/ctrl-o.md) - 2026-10-29
+
+## macos
+
+* [Generate plists for macOS](https://github.com/ryancheley/til/blob/main/macos/generate-plists.md) - 2026-11-22
 <!-- index ends -->
